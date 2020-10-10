@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:background="@android:color/white"
+        app:iconifiedByDefault="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryBackground="@null"
+        app:queryHint="Search Username"
+        app:showDividers="end" />
+
+    <ImageView
+        android:id="@+id/imgNotFoundMain"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="130dp"
+        android:layout_below="@+id/progressBar"
+        android:scaleType="fitXY"
+        android:src="@drawable/octocat" />
+
+    <TextView
+        android:id="@+id/txtNotFoundMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_below="@+id/imgNotFoundMain"
+        android:text="User Yang Dicari Tidak Ada"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search"
+        app:layout_constraintTop_toBottomOf="@+id/search"
+        tools:listitem="@layout/item_githubuser" />
+
+</RelativeLayout>

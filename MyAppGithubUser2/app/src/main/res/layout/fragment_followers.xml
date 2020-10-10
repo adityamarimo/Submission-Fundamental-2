@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FollowersFragment">
+
+    <ImageView
+        android:id="@+id/imgNotFoundFollowers"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="40dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/octocat" />
+
+    <TextView
+        android:id="@+id/txtNotFoundFollowers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="120dp"
+        android:text="Data Follower Tidak Ada"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <ProgressBar
+        android:id="@+id/progressBarFollowers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search"
+        android:layout_marginTop="50dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_listFollowers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search"
+        app:layout_constraintTop_toBottomOf="@+id/search"
+        tools:listitem="@layout/item_githubuser" />
+
+</FrameLayout>
